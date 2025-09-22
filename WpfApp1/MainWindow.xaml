@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="GetImageInfo_Button" Content="画像情報取得" HorizontalAlignment="Left" Height="30" Margin="39,29,0,0" VerticalAlignment="Top" Width="125" Command="{Binding GetImageInfoListCommand}"/>
+        <Label x:Name="Status_Label" Content="" HorizontalAlignment="Left" Height="34" Margin="102,316,0,0" VerticalAlignment="Top" Width="236" BorderThickness="1,1,1,1" BorderBrush="Black"/>
+        <ListView x:Name="ImageFile_ListView" ItemsSource="{Binding ImageInfoModels}" Margin="39,78,32,155">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="画像名" DisplayMemberBinding="{Binding ImageName}"/>
+                        <GridViewColumn Header="画像URL" DisplayMemberBinding="{Binding ImageUrl}"/>
+                        <GridViewColumn Header="作成者" DisplayMemberBinding="{Binding CreatedBy}"/>
+                        <GridViewColumn Header="作成日" DisplayMemberBinding="{Binding CreatedAt}"/>
+                        <GridViewColumn Header="機密モード" DisplayMemberBinding="{Binding ConfidentialMode}"/>
+                        <GridViewColumn Header="説明" DisplayMemberBinding="{Binding Description}"/>
+
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="ステータス：" HorizontalAlignment="Left" Margin="36,320,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
