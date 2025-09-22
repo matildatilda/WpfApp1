@@ -18,5 +18,13 @@
             var result = vm.GetImageInfoModelListInternal();
             Assert.AreEqual(3, result.ToList().Count);
         }
+
+        [TestMethod]
+        public void TestMethod_GetImageInfoListCommand_CanExecute()
+        {
+            var vm = new WpfApp1.ImageManagerViewModel();
+            bool result = vm.GetImageInfoListCommand.CanExecute(new object());
+            Assert.IsTrue(result);
+        }
     }
 }
