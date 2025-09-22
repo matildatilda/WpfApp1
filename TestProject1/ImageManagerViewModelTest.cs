@@ -6,7 +6,7 @@
         [TestMethod]
         public void TestMethod_GetImageInfoModelList()
         {
-            var vm = new ImageManagerViewModel();
+            var vm = new WpfApp1.ImageManagerViewModel();
             vm.GetImageInfoModelList();
             Assert.IsTrue(true);
         }

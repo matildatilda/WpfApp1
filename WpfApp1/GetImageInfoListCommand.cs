@@ -36,7 +36,11 @@ namespace WpfApp1
             return this.delegateCanGetImage?.Invoke() ?? true;
         }
 
-        public event EventHandler? CanExecuteChanged;
+        public event EventHandler? CanExecuteChanged
+        {
+            add { }
+            remove { }
+        }
 
         // ここはUI部品のcommandプロパティと結合している。ボタンのクリックイベントで発火。
         public void Execute(object? parameter) 
