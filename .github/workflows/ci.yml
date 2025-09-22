@@ -9,18 +9,21 @@ on:
 
 jobs:
   analysis-codes:
-      runs-on: ubuntu-latest
+    runs-on: windows-latest
 
-      steps:
-      - uses: actions/checkout@v4
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0' # Specify your desired .NET version
-      - name: Restore dependencies
-        run: dotnet restore
-      - name: Build and run code analysis
-        run: dotnet build --no-restore -warnaserror -clp:NoSummary
+    steps:
+    - name: Checkout code
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0' # Specify your desired .NET version
+    - name: Restore dependencies
+      run: dotnet restore
+    
+    - name: Build and run code analysis
+      run: dotnet build --no-restore -warnaserror -clp:NoSummary
 
   build-and-test:
     runs-on: windows-latest
