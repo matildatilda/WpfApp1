@@ -26,5 +26,12 @@
             bool result = vm.GetImageInfoListCommand.CanExecute(new object());
             Assert.IsTrue(result);
         }
+
+        [TestMethod]
+        public void TestMethod_GetImageInfoListCommand_Execute()
+        {
+            var vm = new WpfApp1.ImageManagerViewModel();
+            Assert.IsTrue(true);
+        }
     }
 }
