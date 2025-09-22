@@ -5,6 +5,8 @@ on:
     branches: [ main, develop ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:  # 手動実行ボタンを追加
+    branches: [ main ]  
 
 jobs:
   build-and-test:
