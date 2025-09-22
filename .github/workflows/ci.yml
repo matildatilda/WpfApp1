@@ -1,11 +1,11 @@
 name: CI/CD Pipeline
 
 on:
+  workflow_dispatch:  # 手動実行ボタンを追加
   push:
     branches: [ main, develop ]
   pull_request:
     branches: [ main ]
-  workflow_dispatch:  # 手動実行ボタンを追加
 
 jobs:
   build-and-test:
